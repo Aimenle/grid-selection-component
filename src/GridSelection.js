@@ -1,3 +1,8 @@
+const GridSize = {
+  sizeX: 32,
+  sizeY: 18
+}
+
 const Block = { tag: 'div' }
 
 const GridBox = {
@@ -58,10 +63,7 @@ const Grid = {
   }
 }
 
-const GridSize = {
-  sizeX: 16,
-  sizeY: 8
-}
+
 
 export const GridSelection = {
   state: {
@@ -154,3 +156,4 @@ export const GridSelection = {
     }
   }
 }
+

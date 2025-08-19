@@ -1,18 +1,18 @@
-# Grid Selection Generator CLI Tool
+# Modal Generator CLI Tool
 
-A command-line tool for generating and updating Grid Selection components
+A command-line tool for generating and updating Modal components with customizable grid sizes in your Symbols.js project.
 
 ## Overview
 
 This CLI tool allows you to:
-- Generate new Grid Selection components with custom grid dimensions
-- Update existing Grid Selection components by modifying the `GridSize` constant
-- Automatically fetch the latest Grid Selection component structure from `src/components.js`
+- Generate new Modal components with custom grid dimensions
+- Update existing Modal components by modifying the `GridSize` constant
+- Automatically fetch the latest Modal component structure from `src/components.js`
 - Target specific files or directories for component generation
 
 ## Features
 
-- **Dynamic Source Reading**: Reads the actual Grid Selection component from `src/components.js` to ensure consistency
+- **Dynamic Source Reading**: Reads the actual Modal component from `src/components.js` to ensure consistency
 - **GridSize Management**: Automatically manages the `GridSize` constant with custom `sizeX` and `sizeY` values
 - **Flexible Targeting**: Can create new files or update existing ones
 - **Directory Support**: Creates `modal.js` files when targeting directories
@@ -23,13 +23,13 @@ This CLI tool allows you to:
 The CLI tool is ready to use. Make sure you have Node.js installed and the tool is executable:
 
 ```bash
-chmod +x cli-generate-grid-selection.js
+chmod +x cli-generate-modal.js
 ```
 
 ## Usage
 
 ```bash
-node cli-generate-grid-selection.js [options] <target>
+node cli-generate-modal.js [options] <target>
 ```
 
 ### Options
@@ -40,48 +40,48 @@ node cli-generate-grid-selection.js [options] <target>
 
 ### Arguments
 
-- `<target>` - Target file or folder where to create/update the Grid Selection component
+- `<target>` - Target file or folder where to create/update the Modal component
 
 ## Examples
 
 ### Update existing components file
 ```bash
-node cli-generate-grid-selection.js --sizeX 20 --sizeY 10 src/components.js
+node cli-generate-modal.js --sizeX 20 --sizeY 10 src/components.js
 ```
 Updates the `GridSize` constant in the existing file.
 
 ### Create new modal in directory
 ```bash
-node cli-generate-grid-selection.js --sizeX 12 --sizeY 6 src/
+node cli-generate-modal.js --sizeX 12 --sizeY 6 src/
 ```
-Creates `src/modal.js` with a Grid Selection component using 12x6 grid.
+Creates `src/modal.js` with a Modal component using 12x6 grid.
 
 ### Create new modal file with default size
 ```bash
-node cli-generate-grid-selection.js components/new-modal.js
+node cli-generate-modal.js components/new-modal.js
 ```
 Creates a new file with default 16x8 grid size.
 
 ### Create modal with custom dimensions
 ```bash
-node cli-generate-grid-selection.js --sizeX 24 --sizeY 12 components/large-modal.js
+node cli-generate-modal.js --sizeX 24 --sizeY 12 components/large-modal.js
 ```
 Creates a new modal component with 24x12 grid.
 
 ## How It Works
 
-1. **Source Reading**: The tool reads the Grid Selection component structure from `src/components.js`
+1. **Source Reading**: The tool reads the Modal component structure from `src/components.js`
 2. **GridSize Replacement**: It replaces or creates the `GridSize` constant with your specified dimensions
 3. **Smart Updates**: 
    - If the target file has a `GridSize` constant, it updates only that constant
-   - If the target file has a Grid Selection component without `GridSize`, it replaces the entire component
+   - If the target file has a Modal component without `GridSize`, it replaces the entire component
    - If the target doesn't exist, it creates a new file with the complete component
 
 ## Component Structure
 
-The generated Grid Selection component includes:
+The generated Modal component includes:
 - `GridSize` constant with custom dimensions
-- Complete Grid Selection component with grid selection functionality
+- Complete Modal component with grid selection functionality
 - Interactive mouseover/mouseleave events
 - State management for selected coordinates and cell count
 
@@ -90,15 +90,16 @@ The generated Grid Selection component includes:
 ```
 your-project/
 ├── src/
-│   └── components.js          # Source Grid Selection component
-├── cli-generate-grid-selection.js      # CLI tool
+│   └── components.js          # Source Modal component
+├── cli-generate-modal.js      # CLI tool
 └── CLI-README.md             # This documentation
 ```
 
 ## Requirements
 
 - Node.js
-- `src/components.js` file with Grid Selection component definition
+- Symbols.js framework
+- `src/components.js` file with Modal component definition
 
 ## Error Handling
 
@@ -110,6 +111,6 @@ The tool includes comprehensive error handling:
 
 ## Notes
 
-- The tool maintains the exact structure and styling from your source Grid Selection component
-- Any updates to the Grid Selection component in `src/components.js` will be automatically used in new generations
-- The `GridSize` constant uses object spread syntax (`...GridSize`) in the Grid Selection props
+- The tool maintains the exact structure and styling from your source Modal component
+- Any updates to the Modal component in `src/components.js` will be automatically used in new generations
+- The `GridSize` constant uses object spread syntax (`...GridSize`) in the Modal props

@@ -1,8 +1,6 @@
 import { create, Flex } from 'smbls'
 
-import designSystem from './designSystem'
 import * as components from './components'
-import pages from './pages'
 
 create(
   {
@@ -10,15 +8,25 @@ create(
     props: {
       theme: 'document',
       flow: 'column',
-      height: '100vh',
       align: 'center space-between',
       padding: 'Z2'
     },
-    content: {}
+    style: {
+      height: '100vh',
+      background: '#22C1C3',
+      background:
+        'linear-gradient(0deg,rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%)',
+      justifyContent: 'center'
+    },
+    content: {
+      GridSelection: {
+        style: {
+          marginTop: 'auto'
+        }
+      }
+    }
   },
   {
-    designSystem,
-    components,
-    pages
+    components
   }
 )
