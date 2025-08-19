@@ -2,6 +2,16 @@
 
 A command-line tool for generating and updating Grid Selection components
 
+<p align="center">
+<img  width="500" alt="Screenshot_20250819_090828-1" src="https://github.com/user-attachments/assets/6984b188-bd87-45e0-8c98-1ff22d2479d4" />
+</p>
+<p align="center">
+<img width="500" he alt="Screenshot_20250819_090907" src="https://github.com/user-attachments/assets/d6f0fe8c-71a0-491f-bd98-699fa9c68a62" />
+</p>
+
+
+
+
 ## Overview
 
 This CLI tool allows you to:
@@ -99,17 +109,3 @@ your-project/
 
 - Node.js
 - `src/components.js` file with Grid Selection component definition
-
-## Error Handling
-
-The tool includes comprehensive error handling:
-- Validates numeric inputs for grid dimensions
-- Checks file permissions and accessibility
-- Provides clear error messages for troubleshooting
-- Gracefully handles missing source files
-
-## Notes
-
-- The tool maintains the exact structure and styling from your source Grid Selection component
-- Any updates to the Grid Selection component in `src/components.js` will be automatically used in new generations
-- The `GridSize` constant uses object spread syntax (`...GridSize`) in the Grid Selection props
